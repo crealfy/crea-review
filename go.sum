@@ -1,0 +1,4 @@
+github.com/coder/websocket v1.8.14 h1:9L0p0iKiNOibykf283eHkKUHHrpG7f65OE3BhhO7v9g=
+github.com/coder/websocket v1.8.14/go.mod h1:NX3SzP+inril6yawo5CQXx8+fk145lPDC6pumgx0mVg=
+github.com/crealfy/crea-pipe v0.0.0-20260215182703-766e071c3049 h1:aE3HHEv+nhKWWh2oZMQAffH1K8EuXYHt+/nNmpRQdAY=
+github.com/crealfy/crea-pipe v0.0.0-20260215182703-766e071c3049/go.mod h1:Q1ZiA79+5nNA9Lel9FXHcyGuLLxgRGR5tRSePhsZ3o0=
