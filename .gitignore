@@ -1,0 +1,13 @@
+*.out
+*.test
+*.log
+.active_task
+.backup
+.claude/
+.coverage/
+.junie/
+.local/
+.mcp.json
+build/
+covprofile
+node_modules/
