@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Documentation | Crealfy Review</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta
+        name="description"
+        content="AI-powered code review — intelligent batching, session tracking, and priority scoring"
+    />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="./_media/css/github.min.css"/>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
+    <style>
+        :root {
+            --theme-color: #00b0aa;
+            --color-bg: #f0eee9;
+            --color-text: #2b2c30;
+            scrollbar-color: color-mix(
+                in oklch,
+                var(--theme-color) 100%,
+                transparent
+            ) var(--color-bg);
+        }
+
+        .app-name-link {
+            font-weight: bold;
+        }
+
+        .anchor span {
+            color: var(--color-text);
+        }
+
+        .sidebar-nav > ul > li > a {
+            font-weight: 600;
+        }
+
+        .markdown-section pre {
+            border: 1px solid var(--color-text);
+        }
+
+        .markdown-section pre,
+        .markdown-section code {
+            background-color: var(--color-bg);
+        }
+
+        .markdown-section code {
+            border-radius: 3px;
+            padding: 2px 6px;
+        }
+
+        .markdown-section pre > code {
+            padding: 1em;
+        }
+
+        .tip {
+            padding: 1em;
+            border-left: 4px solid var(--theme-color);
+            background: rgba(0, 176, 170, 0.05);
+            margin: 1em 0;
+        }
+
+        .warning {
+            padding: 1em;
+            border-left: 4px solid #ff9800;
+            background: rgba(255, 152, 0, 0.05);
+            margin: 1em 0;
+        }
+
+        /* Top-level section headers - LARGER */
+        .sidebar-nav > ul > li > p > strong,
+        .sidebar-nav > ul > li > a {
+            font-size: 1.3em;
+        }
+
+        /* Nested headers inside - smaller */
+        .sidebar-nav > ul > li > ul strong {
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">Loading...</div>
+<script>
+    const docPath = window.location.pathname;
+    const isNightly = docPath.includes('/nightly');
+    const isLatest = docPath.includes('/latest');
+    window.$docsify = {
+        name: isNightly ? 'Review (nightly)' : isLatest ? 'Review (latest)' : 'Review',
+        nameLink: isNightly ? '/docs/crea-review/nightly/' : isLatest ? '/docs/crea-review/latest/' : '/docs/crea-review/',
+        repo: "https://github.com/crealfy/crea-review",
+        loadSidebar: true,
+        alias: {
+            "/.*/_sidebar.md": "/_sidebar.md",
+        },
+        autoHeader: true,
+        subMaxLevel: 3,
+        auto2top: true,
+        coverpage: false,
+        onlyCover: false,
+        search: {
+            placeholder: "Search documentation",
+            noData: "No results found",
+            depth: 3,
+        },
+        copyCode: {
+            buttonText: "Copy",
+            successText: "Copied",
+        },
+        tabs: {
+            persist: true,
+            sync: true,
+        },
+        pagination: {
+            previousText: "Previous",
+            nextText: "Next",
+            crossChapter: true,
+        },
+        formatUpdated: "{DD}.{MM}.{YYYY} {HH}:{mm}",
+        mergeNavbar: true,
+        themeColor: "#00b0aa",
+        plugins: [
+            function (hook) {
+                hook.doneEach(function () {
+                    const versionEl = document.querySelector('.app-name-link');
+                    if (versionEl) {
+                        const small = document.createElement('small');
+                        small.style.fontSize = '14px';
+                        small.style.fontWeight = 'bold';
+                        if (isNightly) {
+                            small.style.color = 'red';
+                            small.textContent = '(nightly)';
+                            versionEl.textContent = 'Review ';
+                            versionEl.appendChild(small);
+                        } else if (isLatest) {
+                            small.style.color = 'green';
+                            small.textContent = '(latest)';
+                            versionEl.textContent = 'Review ';
+                            versionEl.appendChild(small);
+                        }
+                    }
+                });
+            },
+        ],
+    };
+</script>
+<script src="./_media/js/bundle.min.js?v=1d90fdbd"></script>
+</body>
+</html>
